@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>ET's Monsters</title>
+    <style>
+      :root {
+        --folderwidth: 900px;
+        --folderheight: 2000px;
+        --foldercolor: #f7f399;
+        --folderbordercolor: #dbd774;
+        --folderbordersize: 10px;
+        --tabheight: calc(0.05 * var(--folderheight));
+        --tabwidth: calc(0.24 * var(--folderwidth));
+        --pagetop: 45vh;
+        --pagemargin: calc( 0.5 * calc(100vw - var(--folderwidth)));
+        
+        /* comment */
+      }
+      body {
+        font-family: Courier New, Courier, monospace;
+      }
+      .mainfolder {
+        width: var(--folderwidth);
+        height: var(--folderheight);
+        
+        background-color: var(--foldercolor);
+        
+        border-radius: 0% 1% 1% 1%;
+        border: var(--folderbordersize) solid var(--folderbordercolor);
+  
+        margin-top: var(--pagetop);
+        margin-left: var(--pagemargin);
+        margin-right: var(--pagemargin);
+      }
+      .foldertabs {
+        position: absolute;
+        top: calc(calc(var(--pagetop) - var(--tabheight) + var(--folderbordersize)));
+        margin-left: var(--pagemargin);
+      }
+      .tabs {
+        width: var(--tabwidth);
+        height: var(--tabheight);
+  
+        font-family: Courier New, Courier, monospace;
+        font-size: calc(0.025 * var(--folderwidth));
+        background-color: var(--foldercolor);
+        
+        padding: 2vh;
+        border: var(--folderbordersize) solid var(--folderbordercolor);
+        border-bottom: none;
+        border-radius: 45% 45% 0% 0%;
+      }
+    </style>
+  </head> 
+	<body>
+    <div class="foldertabs">
+      <button class="tabs" id="scarymonsters">Scary Monsters</button><button class="tabs" id="horrificstories">Horrific Stories</button><button class="tabs" id="terriblecoding">Terrible Coding</button>
+    </div>
+		<div class="mainfolder"></div>
+	</body>
+</html>
