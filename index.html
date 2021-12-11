@@ -7,8 +7,9 @@
       :root {
         --folderwidth: 900px;
         --folderheight: 2000px;
-        --foldercolor: #f7f399;
-        --folderbordercolor: #dbd774;
+        --foldercolor: #f2e696;
+        --folderbordercolor: #e0d279;
+        --folderborderdark: #d1c36d;
         --folderbordersize: 10px;
         --tabheight: calc(0.05 * var(--folderheight));
         --tabwidth: calc(0.24 * var(--folderwidth));
@@ -33,24 +34,51 @@
         margin-left: var(--pagemargin);
         margin-right: var(--pagemargin);
       }
+      
       .foldertabs {
         position: absolute;
-        top: calc(calc(var(--pagetop) - var(--tabheight) + calc(0.5 *var(--folderbordersize))));
+        top: calc(calc(var(--pagetop) - var(--tabheight)));
         margin-left: var(--pagemargin);
       }
       
-      .tabs {
-        width: var(--tabwidth);
+      .activetab {
+  			width: var(--tabwidth);
         height: var(--tabheight);
-  
+        
         font-family: Courier New, Courier, monospace;
         font-size: calc(0.025 * var(--folderwidth));
-        background-color: var(--foldercolor);
+        font-weight: bold;
         
         padding: 2vh;
-        border: var(--folderbordersize) solid var(--folderbordercolor);
         border-radius: 45% 45% 0% 0%;
+        
+        border: var(--folderbordersize) solid var(--folderbordercolor);
+        border-bottom: none;
+        background-color: var(--foldercolor);
       }  
+      
+      .inactivetab {
+        width: var(--tabwidth);
+        height: calc(0.96 * var(--tabheight));
+        
+        font-family: Courier New, Courier, monospace;
+        font-size: calc(0.025 * var(--folderwidth));
+        font-weight: bold;
+        
+        padding: 2vh;
+        border-radius: 45% 45% 0% 0%;
+        
+        border: var(--folderbordersize) solid var(--folderborderdark);
+        border-bottom: calc( 2.4 * var(--folderbordersize)) solid var(--folderborderdark);
+        background-color: var(--folderbordercolor);
+      }
+      
+      .inactivetab::hover {
+        border: var(--folderbordersize) solid var(--folderbordercolor);
+        border-bottom: none;
+        background-color: var(--foldercolor);
+        
+      }
       
       .tabcover {
         position: absolute;
@@ -61,24 +89,13 @@
         margin-left: calc(var(--pagemargin) + var(--folderbordersize));
       }
       
-      #scarymonsters {
-        border-bottom: none;
-      }
-      #horrificstories {
-        border-bottom: var(--folderbordersize) solid var(--folderbordercolor);
-      }
-      
-      #terriblecoding {
-        border-bottom: var(--folderbordersize) solid var(--folderbordercolor);
-        top: calc(var(--pagetop) - var(--tabheight)));
-      }
     </style>
   </head> 
 	<body>
     <div class="foldertabs">
-      <button class="tabs" id="scarymonsters">Scary Monsters</button><button class="tabs" id="horrificstories">Horrific Stories</button><button class="tabs" id="terriblecoding">Terrible Coding</button>
+      <button class="activetab" id="scarymonsters">Scary Monsters</button><button class="inactivetab" id="horrificstories">Horrific Stories</button><button class="inactivetab" id="terriblecoding">Terrible Coding</button>
     </div>
-    <div class="tabcover"></div>
+    <div class="tabcover" id="right"></div>
 		<div class="mainfolder"></div>
 	</body>
 </html>
