@@ -38,6 +38,11 @@
       	font-family: Courier New, Courier, monospace;
       }
       
+      img{
+        width: var(--iconcanvas);
+        height: var(--iconcanvas);
+      }
+      
       .titlebox {
         position: absolute;
         display: inline-block;
@@ -132,10 +137,48 @@
         margin-left: var(--righticon);
       }
       
-      .spidericon {
+      .secondrowicons{
+        position: absolute;
+        min-width: calc(4 * var(--iconcanvas));
+				/* this fixes in div line breaks */
+        font-size: 0px;
+        
+        margin-top: calc(var(--insidefolderheight) +  var(--iconmargin) + var(--secondrow));
+        margin-left: var(--righticon);
+      }
+      
+      .icontext {
+        margin-top: calc( 2 * var(--iconmargin));
+        text-align: center;
+        font-size: var(--textsize);
+        font-weight: bold;
+      }
+      
+      .secondrowicontext {
+        margin-top: calc(0.5 * var(--iconmargin));
+        text-align: center;
+        font-size: var(--textsize);
+        font-weight: bold;
+      }
+      
+      .righticon {
         position: absolute;
         width: var(--iconcanvas);
         height: var(--iconcanvas);
+      }
+      
+      .middleicon {
+        position: absolute;
+        width: var(--iconcanvas);
+        height: var(--iconcanvas);
+        margin-left: var(--middleicon);
+      }
+      
+      .lefticon {
+        position: absolute;
+        width: var(--iconcanvas);
+        height: var(--iconcanvas);
+        margin-left: var(--lefticon);
       }
       
       .spiderpixel {
@@ -235,12 +278,6 @@
         calc(11 * var(--pixelsize)) calc(4 * var(--pixelsize)) var(--titlecolor);
       }
       
-      .alienicon {
-        position: absolute;
-        width: var(--iconcanvas);
-        height: var(--iconcanvas);
-        margin-left: var(--middleicon);
-      }
       .alienpixel {
         width: var(--pixelsize);
         height: var(--pixelsize);
@@ -325,12 +362,6 @@
         calc(14 * var(--pixelsize)) calc(9 * var(--pixelsize)) var(--titlecolor);
       }
       
-      .witchicon {
-        position: absolute;
-        width: var(--iconcanvas);
-        height: var(--iconcanvas);
-        margin-left: var(--lefticon);
-      }
       .witchpixel {
         width: var(--pixelsize);
         height: var(--pixelsize);
@@ -514,40 +545,6 @@
         calc(17 * var(--pixelsize)) calc(4 * var(--pixelsize)) var(--titlecolor);
       }
       
-      .icontext {
-        margin-top: calc( 2 * var(--iconmargin));
-        text-align: center;
-        font-size: var(--textsize);
-        font-weight: bold;
-      }
-      
-      .underconstruction {
-        min-width: var(--folderwidth);
-        
-      }
-      .placeholderright {
-        position: absolute;
-        width: var(--iconcanvas);
-        height: var(--iconcanvas);
-        margin-top: var(--secondrow);
-      }
-      
-      .placeholdermiddle {
-        position: absolute;
-        width: var(--iconcanvas);
-        height: var(--iconcanvas);
-        margin-left: var(--middleicon);
-        margin-top: var(--secondrow);
-      }
-      
-      .placeholderleft {
-        position: absolute;
-        width: var(--iconcanvas);
-        height: var(--iconcanvas);
-        margin-top: var(--secondrow);
-        margin-left: var(--lefticon);
-      }
-      
     </style>
   </head> 
 	<body>
@@ -561,27 +558,33 @@
     </div>
     <div class="tabcover"></div>
     <div class="icons">
-    <div class="spidericon">
+    <div class="righticon">
       <div class="spiderpixel"></div>
       <p class="icontext">Arachnid</p>
     </div>
-    <div class="alienicon">
+    <div class="middleicon">
       <div class="alienpixel"></div>
-      <p class="icontext" id="middleicon">Alien</p>
+      <p class="icontext">Alien</p>
     </div>
-    <div class="witchicon">
+    <div class="lefticon">
       <div class="witchpixel"></div>
-      <p class="icontext" id="lefticon">Witch</p>
+      <p class="icontext">Witch</p>
     </div>
-      <div class="underconstruction">
-        <div class="">
-          <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderright"></image>
-        	<p class="icontext">Under</br> Construction</p>
-        </div>
-        <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholdermiddle"></image>
-        <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderleft"></image>
-      </div>
 		</div>
+    <div class="secondrowicons">
+    <div class="righticon">
+      <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderright"></image>
+      <p class="secondrowicontext">Under<br>Construction</p>
+    </div>
+    <div class="middleicon">
+      <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderright"></image>
+      <p class="secondrowicontext">Under<br>Construction</p>
+    </div>
+    <div class="lefticon">
+      <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderright"></image>
+      <p class="secondrowicontext">Under<br>Construction</p>
+    </div>  
+    </div>
 		<div class="mainfolder"></div>
 	</body>
 </html>
