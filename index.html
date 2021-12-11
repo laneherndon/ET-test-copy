@@ -19,11 +19,23 @@
         /* comment */
       }
       body {
+				/* background-image: url(https://64.media.tumblr.com/41ed46e4b0264cec53a8c23d98390b05/tumblr_p9ayvofPPV1ualrc9o1_400.gifv) ; */
         font-family: Courier New, Courier, monospace;
       }
+      
+      .titlebox {
+        position: absolute;
+        display: inline-block;
+        left: calc(var(--pagemargin))
+      }
+      .title {
+        font-size: calc(0.1 * var(--folderwidth));
+      }
+      
       .mainfolder {
         width: var(--folderwidth);
         height: var(--folderheight);
+        display: inline-block;
         
         background-color: var(--foldercolor);
         
@@ -37,7 +49,8 @@
       
       .foldertabs {
         position: absolute;
-        top: calc(calc(var(--pagetop) - var(--tabheight)));
+        display: inline-block;
+        margin-top: calc(calc(var(--pagetop) - var(--tabheight)));
         margin-left: var(--pagemargin);
       }
       
@@ -49,9 +62,7 @@
         font-size: calc(0.025 * var(--folderwidth));
         font-weight: bold;
         
-        padding: 2vh;
         border-radius: 45% 45% 0% 0%;
-        
         border: var(--folderbordersize) solid var(--folderbordercolor);
         border-bottom: none;
         background-color: var(--foldercolor);
@@ -64,12 +75,10 @@
         font-family: Courier New, Courier, monospace;
         font-size: calc(0.025 * var(--folderwidth));
         font-weight: bold;
-        
-        padding: 2vh;
+    
         border-radius: 45% 45% 0% 0%;
-        
         border: var(--folderbordersize) solid var(--folderborderdark);
-        border-bottom: calc( 2.4 * var(--folderbordersize)) solid var(--folderborderdark);
+        border-bottom: var(--folderbordersize) solid var(--folderborderdark);
         background-color: var(--folderbordercolor);
       }
       
@@ -87,15 +96,20 @@
         
         background-color: var(--foldercolor);
         margin-left: calc(var(--pagemargin) + var(--folderbordersize));
+        margin-top: var(--pagetop);
+        
       }
       
     </style>
   </head> 
 	<body>
+    <div class="titlebox">
+      <h1 class="title">E.T.'s Monsters</h1>
+    </div>
     <div class="foldertabs">
       <button class="activetab" id="scarymonsters">Scary Monsters</button><button class="inactivetab" id="horrificstories">Horrific Stories</button><button class="inactivetab" id="terriblecoding">Terrible Coding</button>
     </div>
-    <div class="tabcover" id="right"></div>
+    <div class="tabcover"></div>
 		<div class="mainfolder"></div>
 	</body>
 </html>
