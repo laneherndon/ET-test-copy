@@ -516,11 +516,15 @@
       
       .icontext {
         margin-top: calc( 2 * var(--iconmargin));
-        margin-left: calc( 0.5 * var(--iconmargin));
+        text-align: center;
         font-size: var(--textsize);
         font-weight: bold;
       }
       
+      .underconstruction {
+        min-width: var(--folderwidth);
+        
+      }
       .placeholderright {
         position: absolute;
         width: var(--iconcanvas);
@@ -532,8 +536,8 @@
         position: absolute;
         width: var(--iconcanvas);
         height: var(--iconcanvas);
-        margin-top: var(--secondrow);
         margin-left: var(--middleicon);
+        margin-top: var(--secondrow);
       }
       
       .placeholderleft {
@@ -542,14 +546,6 @@
         height: var(--iconcanvas);
         margin-top: var(--secondrow);
         margin-left: var(--lefticon);
-      }
-      
-      #lefticon {
-        margin-left: calc( 0.7 * var(--iconmargin));
-      }
-      
-      #middleicon {
-        margin-left: calc( 0.7 * var(--iconmargin));
       }
       
     </style>
@@ -578,7 +574,10 @@
       <p class="icontext" id="lefticon">Witch</p>
     </div>
       <div class="underconstruction">
-        <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderright"></image>
+        <div class="">
+          <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderright"></image>
+        	<p class="icontext">Under</br> Construction</p>
+        </div>
         <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholdermiddle"></image>
         <image src="https://c.tenor.com/MRCIli40TYoAAAAi/under-construction90s-90s.gif" alt="under construction" class="placeholderleft"></image>
       </div>
